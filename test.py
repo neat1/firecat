@@ -1,6 +1,17 @@
-print ("hello word")
+# import libraries
+import requests
+from bs4 import BeautifulSoup
 
-print("this is the second commmit I hope with new branch")
+url = 'https://444.hu/'
+page = requests.get(url)
+
+soup = BeautifulSoup(page.text, 'html.parser')
 
 
-print("this is a commit")
+#print(soup.prettify())
+x = soup.find_all('p')
+
+#print(soup.find_all('p',id= 'second'))
+
+#print(soup.find_all('p',class_='chorus'))
+print(soup.find_all(id='third'))
