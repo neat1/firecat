@@ -7,7 +7,7 @@ soup = BeautifulSoup(page,features='lxml')
 page.close()
 
 
-
+#test
 
 '''h1s = soup.find_all("h1")
 for h1 in h1s:
