@@ -14,17 +14,17 @@ def open_this_application(exe_path=r'"C:\Program Files\JetBrains'
     subprocess.call(exe_path)
 
 
-def string_of_currently_running_applications():
+def currently_running_applications() -> str:
     # Returns a string output of the currently running apps.
-    cmd = 'WMIC PROCESS get Caption'
-    output = subprocess.check_output(cmd, shell=False, universal_newlines=True)
-    return output
+    command = 'WMIC PROCESS get Caption'
+    string_output = subprocess.check_output(command, shell=False, universal_newlines=True)
+    return string_output
 
 
 # Close application on Windows, two examples:
-if 'cmd.exe' in string_of_currently_running_applications():
+if 'cmd.exe' in currently_running_applications():
     close_this_application('cmd.exe')
-if 'Spotify.exe' in string_of_currently_running_applications():
+if 'Spotify.exe' in currently_running_applications():
     close_this_application('Spotify.exe')
 
 # Opens any program notepad++ as an example
