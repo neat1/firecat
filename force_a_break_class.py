@@ -7,7 +7,9 @@ class Application:
         self.exe = exe
 
     def close_this_application(self):
-        subprocess.call("TASKKILL /F /IM {}".format(self.exe))
+        command = '''wmic process where "name='{}'" get ExecutablePath'''.format(self.exe)
+        if self.exe in command:
+            subprocess.call("TASKKILL /F /IM {}".format(self.exe))
 
     def open_this_application(self):
         # command to find the Executable path of the exe
@@ -22,8 +24,8 @@ class Application:
         #subprocess.call(output[sliced_final_command])
 
 
-instance = Application('chrome.exe')
-instance.open_this_application()
+instance = Application('cmd.exe')
+instance.close_this_application()
 
 
 
