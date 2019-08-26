@@ -8,7 +8,8 @@ class Application:
 
     def close_this_application(self):
         command = '''wmic process where "name='{}'" get ExecutablePath'''.format(self.exe)
-        if self.exe in command:
+        output = subprocess.check_output(command, universal_newlines=True)
+        if self.exe in output:
             subprocess.call("TASKKILL /F /IM {}".format(self.exe))
 
     def open_this_application(self):
