@@ -8,16 +8,17 @@ class Application:
         self.exe = exe
 
     def open_this_application(self):
-        # command to find the executable path of the exe.
-        command = '''WHERE /R C:\ {}*'''.format(self.exe)
+
+        command_to_search = 'WHERE {}'.format(self.exe)
         # select the first line which contains the actual exe file.
-        output = subprocess.check_output(command, universal_newlines=True)
-        start_of_the_command = output.find('C')
-        end_of_the_command = output.find('exe')
+        command_output = subprocess.check_output(command_to_search, universal_newlines=True)
+        start_of_the_command = command_output.find('C')
+        end_of_the_command = command_output.find('exe')
         sliced_final_command = slice(start_of_the_command, end_of_the_command + 3)
-        print(output[sliced_final_command])
-        # run the exe with the full path
-        subprocess.call(output[sliced_final_command])
+        print('Opening up application...:')
+        print(command_output[sliced_final_command])
+
+        subprocess.call(command_output[sliced_final_command])
 
     def close_this_application(self):
             subprocess.call("TASKKILL /F /IM {}".format(self.exe))
@@ -25,10 +26,7 @@ class Application:
 
 
 
-instance = Application('spotify.exe')
+instance = Application('notepad.exe')
 instance.open_this_application()
-
-
-
 
 
