@@ -1,0 +1,3 @@
+
+
+wmic process where "name='{}'" get ExecutablePath
