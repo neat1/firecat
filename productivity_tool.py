@@ -23,7 +23,6 @@ class Application:
 
 instance = Application('python.exe')
 instance.close_this_application()
-
-
+#test
 
 
