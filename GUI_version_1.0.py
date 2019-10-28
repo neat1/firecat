@@ -8,11 +8,11 @@ class App(QWidget):
 
     def __init__(self):
         super().__init__()
-        self.title = 'PyQt5 button - pythonspot.com'
+        self.title = 'Productivity Tool 1.0'
         self.left = 500
         self.top = 100
-        self.width = 320
-        self.height = 200
+        self.width = 500
+        self.height = 400
         self.initUI()
     def initUI(self):
         self.setWindowTitle(self.title)
@@ -20,7 +20,7 @@ class App(QWidget):
 
         button = QPushButton('Start working!', self)
         button.setToolTip('This is an example button')
-        button.move(100, 70)
+        button.move(150, 100)
         button.clicked.connect(self.on_click)
 
         self.show()

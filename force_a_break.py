@@ -22,16 +22,15 @@ def currently_running_applications() -> str:
     return string_output
 
 
-# Close application on Windows, two examples:
-if 'cmd.exe' in currently_running_applications():
-    close_this_application('cmd.exe')
-if 'Spotify.exe' in currently_running_applications():
-    close_this_application('Spotify.exe')
-
 # Opens any program notepad++ as an example
-open_this_application(r"C:\Program Files (x86)\Notepad++\notepad++.exe")
+#open_this_application(r"C:\Program Files (x86)\Notepad++\notepad++.exe")
 #hello this is a branch
 
+
+if __name__ == '__main__':
+    close_this_application()
+    open_this_application()
+    close_this_application()
 
 
 
