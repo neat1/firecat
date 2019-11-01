@@ -13,10 +13,8 @@ class Application:
         command_to_run = '{}'.format(self.exe)
         subprocess.Popen(command_to_run)
 
-
     def close_this_application(self):
         subprocess.call("TASKKILL /F /IM {}".format(self.exe))
-
 
 
 if __name__ == '__main__':
