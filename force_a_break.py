@@ -22,17 +22,10 @@ def currently_running_applications() -> str:
     return string_output
 
 
-# Opens any program notepad++ as an example
-#open_this_application(r"C:\Program Files (x86)\Notepad++\notepad++.exe")
-#hello this is a branch
-
-
 if __name__ == '__main__':
     close_this_application()
     open_this_application()
     close_this_application()
 
 
-
-#where /R C:\ notepad++.exe*
 
