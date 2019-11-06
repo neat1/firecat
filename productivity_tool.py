@@ -16,10 +16,8 @@ class Application:
     def close_this_application(self):
         subprocess.call("TASKKILL /F /IM {}".format(self.exe))
 
-
-if __name__ == '__main__':
-    Application.open_this_application()
-    Application.close_this_application()
-
-
-
+    @staticmethod
+    def show_running_applications():
+        command = 'WMIC PROCESS get Caption'
+        string_output = subprocess.check_output(command, shell=False, universal_newlines=True)
+        return string_output
