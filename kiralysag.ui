@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>404</width>
+    <height>260</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Productivity Tool</string>
+  </property>
+  <property name="statusTip">
+   <string>Designed by Andras Vincze</string>
+  </property>
+  <widget class="QWidget" name="centralwidget"/>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>404</width>
+     <height>18</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuFile">
+    <property name="title">
+     <string>File</string>
+    </property>
+    <addaction name="actionOpen_Application"/>
+    <addaction name="actionClose_Application"/>
+    <addaction name="separator"/>
+    <addaction name="actionShow_Running_Applications"/>
+    <addaction name="separator"/>
+    <addaction name="actionExit"/>
+   </widget>
+   <widget class="QMenu" name="menuWork">
+    <property name="title">
+     <string>Work</string>
+    </property>
+    <widget class="QMenu" name="menuSet_Applications">
+     <property name="statusTip">
+      <string>Set applications for Start Coding button</string>
+     </property>
+     <property name="title">
+      <string>Set Applications</string>
+     </property>
+     <property name="icon">
+      <iconset>
+       <normaloff>../Downloads/icons8-bring-to-front-80.png</normaloff>../Downloads/icons8-bring-to-front-80.png</iconset>
+     </property>
+     <addaction name="actionTo_open"/>
+     <addaction name="actionTo_close"/>
+    </widget>
+    <addaction name="actionStart_Coding"/>
+    <addaction name="menuSet_Applications"/>
+   </widget>
+   <addaction name="menuFile"/>
+   <addaction name="menuWork"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <action name="actionOpen_Application">
+   <property name="icon">
+    <iconset>
+     <normaloff>../Downloads/icons8-file-128.png</normaloff>../Downloads/icons8-file-128.png</iconset>
+   </property>
+   <property name="text">
+    <string>Open Application</string>
+   </property>
+  </action>
+  <action name="actionClose_Application">
+   <property name="icon">
+    <iconset>
+     <normaloff>../Downloads/icons8-close-sign-80.png</normaloff>../Downloads/icons8-close-sign-80.png</iconset>
+   </property>
+   <property name="text">
+    <string>Close Application</string>
+   </property>
+  </action>
+  <action name="actionShow_Running_Applications">
+   <property name="icon">
+    <iconset>
+     <normaloff>../Downloads/icons8-run-command-80.png</normaloff>../Downloads/icons8-run-command-80.png</iconset>
+   </property>
+   <property name="text">
+    <string>Show Running Applications</string>
+   </property>
+  </action>
+  <action name="actionExit">
+   <property name="icon">
+    <iconset>
+     <normaloff>../Downloads/icons8-exit-80.png</normaloff>../Downloads/icons8-exit-80.png</iconset>
+   </property>
+   <property name="text">
+    <string>Exit</string>
+   </property>
+   <property name="statusTip">
+    <string>Click to exit application</string>
+   </property>
+   <property name="shortcut">
+    <string>Shift+X</string>
+   </property>
+  </action>
+  <action name="actionStart_Coding">
+   <property name="icon">
+    <iconset>
+     <normaloff>../Downloads/icons8-code-file-96.png</normaloff>../Downloads/icons8-code-file-96.png</iconset>
+   </property>
+   <property name="text">
+    <string>Start Coding</string>
+   </property>
+   <property name="statusTip">
+    <string>Click to open and close predefined applications</string>
+   </property>
+  </action>
+  <action name="actionTo_open">
+   <property name="text">
+    <string>To open</string>
+   </property>
+  </action>
+  <action name="actionTo_close">
+   <property name="text">
+    <string>To close</string>
+   </property>
+  </action>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>actionExit</sender>
+   <signal>triggered()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>201</x>
+     <y>129</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>
