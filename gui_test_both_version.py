@@ -9,7 +9,7 @@
 
 from PyQt5 import QtCore, QtGui, QtWidgets
 from productivity_tool import Application
-import funciton_type_productivity_tool
+import function_type_productivity_tool
 import productivity_tool
 
 
@@ -40,7 +40,7 @@ class Ui_Dialog(object):
         notepad.close_this_application()
 
     def open_application(self):
-        funciton_type_productivity_tool.open_this_application()
+        function_type_productivity_tool.open_this_application()
 
 
 if __name__ == "__main__":
