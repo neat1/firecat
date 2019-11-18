@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>616</width>
+    <height>494</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Productivity Tool</string>
+  </property>
+  <property name="statusTip">
+   <string>Designed by Andras Vincze</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QGridLayout" name="gridLayout_2">
+    <item row="2" column="0">
+     <widget class="QLineEdit" name="lineEdit">
+      <property name="text">
+       <string>valami</string>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="0">
+     <widget class="QScrollArea" name="scrollArea">
+      <property name="widgetResizable">
+       <bool>true</bool>
+      </property>
+      <widget class="QWidget" name="scrollAreaWidgetContents">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>592</width>
+         <height>355</height>
+        </rect>
+       </property>
+       <layout class="QGridLayout" name="gridLayout">
+        <item row="0" column="0">
+         <widget class="QLabel" name="label">
+          <property name="acceptDrops">
+           <bool>false</bool>
+          </property>
+          <property name="text">
+           <string>Welcome to productivity tool 1.0</string>
+          </property>
+          <property name="openExternalLinks">
+           <bool>false</bool>
+          </property>
+          <property name="textInteractionFlags">
+           <set>Qt::LinksAccessibleByMouse|Qt::TextSelectableByMouse</set>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+    </item>
+    <item row="1" column="0">
+     <widget class="QPushButton" name="pushButton">
+      <property name="text">
+       <string>Close Application</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>616</width>
+     <height>26</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuFile">
+    <property name="title">
+     <string>File</string>
+    </property>
+    <addaction name="actionOpen_Application"/>
+    <addaction name="actionClose_Application"/>
+    <addaction name="separator"/>
+    <addaction name="actionShow_Running_Applications"/>
+    <addaction name="separator"/>
+    <addaction name="actionExit"/>
+   </widget>
+   <widget class="QMenu" name="menuWork">
+    <property name="title">
+     <string>Work</string>
+    </property>
+    <widget class="QMenu" name="menuSet_Applications">
+     <property name="statusTip">
+      <string>Set applications for Start Coding button</string>
+     </property>
+     <property name="title">
+      <string>Set Applications</string>
+     </property>
+     <property name="icon">
+      <iconset>
+       <normaloff>../../Downloads/icons8-new-resume-template-96.png</normaloff>../../Downloads/icons8-new-resume-template-96.png</iconset>
+     </property>
+     <addaction name="actionTo_open"/>
+     <addaction name="actionTo_close"/>
+    </widget>
+    <addaction name="actionStart_Coding"/>
+    <addaction name="menuSet_Applications"/>
+   </widget>
+   <addaction name="menuFile"/>
+   <addaction name="menuWork"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <action name="actionOpen_Application">
+   <property name="icon">
+    <iconset>
+     <normaloff>../../Downloads/icons8-open-document-80.png</normaloff>../../Downloads/icons8-open-document-80.png</iconset>
+   </property>
+   <property name="text">
+    <string>Open Application</string>
+   </property>
+  </action>
+  <action name="actionClose_Application">
+   <property name="icon">
+    <iconset>
+     <normaloff>../../Downloads/icons8-close-sign-80.png</normaloff>../../Downloads/icons8-close-sign-80.png</iconset>
+   </property>
+   <property name="text">
+    <string>Close Application</string>
+   </property>
+  </action>
+  <action name="actionShow_Running_Applications">
+   <property name="icon">
+    <iconset>
+     <normaloff>../../Downloads/icons8-run-command-80.png</normaloff>../../Downloads/icons8-run-command-80.png</iconset>
+   </property>
+   <property name="text">
+    <string>Show Running Applications</string>
+   </property>
+   <property name="statusTip">
+    <string>Click to show currently running applications</string>
+   </property>
+  </action>
+  <action name="actionExit">
+   <property name="icon">
+    <iconset>
+     <normaloff>../../Downloads/icons8-exit-80.png</normaloff>../../Downloads/icons8-exit-80.png</iconset>
+   </property>
+   <property name="text">
+    <string>Exit</string>
+   </property>
+   <property name="statusTip">
+    <string>Click to exit application</string>
+   </property>
+   <property name="shortcut">
+    <string>Shift+X</string>
+   </property>
+  </action>
+  <action name="actionStart_Coding">
+   <property name="icon">
+    <iconset>
+     <normaloff>../../Downloads/icons8-developer-64.png</normaloff>../../Downloads/icons8-developer-64.png</iconset>
+   </property>
+   <property name="text">
+    <string>Start Coding</string>
+   </property>
+   <property name="statusTip">
+    <string>Click to open and close predefined applications</string>
+   </property>
+  </action>
+  <action name="actionTo_open">
+   <property name="text">
+    <string>To open</string>
+   </property>
+  </action>
+  <action name="actionTo_close">
+   <property name="text">
+    <string>To close</string>
+   </property>
+  </action>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>actionExit</sender>
+   <signal>triggered()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>201</x>
+     <y>129</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionShow_Running_Applications</sender>
+   <signal>triggered()</signal>
+   <receiver>label</receiver>
+   <slot>clear()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>288</x>
+     <y>207</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton</sender>
+   <signal>clicked()</signal>
+   <receiver>lineEdit</receiver>
+   <slot>clear()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>378</x>
+     <y>423</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>379</x>
+     <y>452</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>
