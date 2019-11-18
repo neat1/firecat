@@ -8,6 +8,7 @@
 
 from PyQt5 import QtCore, QtGui, QtWidgets
 from productivity_tool import Application
+from open_application_window import Ui_Dialog
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
@@ -100,8 +101,9 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
         self.actionExit.triggered.connect(MainWindow.close)
-        self.actionShow_Running_Applications.triggered.connect(self.show_shell)
-        self.pushButton.clicked.connect(self.clicked_pushbutton)
+        self.actionShow_Running_Applications.triggered.connect(self.show_shell) #created by me
+        self.pushButton.clicked.connect(self.clicked_pushbutton) #created by me
+        self.actionOpen_Application.triggered.connect(self.clicked_open_application_method) # created by me
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
     #
@@ -113,12 +115,14 @@ class Ui_MainWindow(object):
         your_time_wasting_app = Application(self.lineEdit.text())
         your_time_wasting_app.close_this_application()
 
+    def clicked_open_application_method(self):
+        Dialog = QtWidgets.QDialog()
+        ui = Ui_Dialog()
+        ui.setupUi(Dialog)
+        Dialog.show()
+        Dialog.exec_()
 
-    def close_time_wasting_applications(self):
-        your_time_wasting_app = Application("notepad.exe")
-        your_time_wasting_app2 = Application("calc.exe")
-        your_time_wasting_app.close_this_application()
-        your_time_wasting_app2.close_this_application()
+
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
