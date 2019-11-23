@@ -122,6 +122,11 @@ class Ui_MainWindow(object):
         Dialog.show()
         Dialog.exec_()
 
+    def choose_directory(self):
+        print("Hello1")
+        input_dir = QFileDialog.getExistingDirectory(None, 'Select a folder:', expanduser("~"))
+        self.ui.lineEdit_Directory.setText(input_dir)
+
 
 
     def retranslateUi(self, MainWindow):
