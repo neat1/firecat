@@ -1,5 +1,0 @@
-
-
-wmic process where "name='{}'" get ExecutablePath
-
-pyuic5 -x kiralysag.ui -o new_gui.py
